@@ -1,72 +1,65 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        slack-clone-app
-      </h1>
-      <h2 class="subtitle">
-        My phenomenal Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+    <messages />
+    <div class="input-layout">
+      <chat-form />
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Messages from "~/components/Messages.vue";
+import ChatForm from "~/components/ChatForm.vue";
 
 export default {
   components: {
-    Logo
+    Messages,
+    ChatForm
   }
-}
+};
 </script>
 
 <style>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
+  height: 100%;
+}
+.chats-container {
+  padding: 16px;
+}
+
+.chat-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  padding: 8px;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.thumbnail-container {
+  margin-right: 16px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.thumbnail-container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
 }
 
-.links {
-  padding-top: 15px;
+.user-name {
+  font-weight: bold;
+}
+.chats-layout {
+  overflow: scroll;
+  height: 90%;
+}
+
+.input-layout {
+  height: 10%;
+}
+.input-container {
+  padding: 10px;
+  height: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
 }
 </style>
